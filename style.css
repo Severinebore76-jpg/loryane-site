@@ -1,0 +1,244 @@
+/* ============================= */
+/* RESET DE BASE */
+/* ============================= */
+/*
+  Cette règle permet d’unifier le calcul des dimensions.
+  La largeur et la hauteur incluent le padding et la bordure.
+  Cela évite les erreurs de mise en page.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* BODY — styles globaux */
+/* ============================= */
+/*
+  Le body contient les styles généraux du document :
+  - marges
+  - couleurs
+  - police par défaut
+  - lisibilité du texte
+*/
+body {
+  margin: 0; /* suppression des marges par défaut */
+
+  background-color: #f6f4f1; /* couleur de fond de la page */
+  color: #532b1b; /* couleur du texte */
+
+  /* Police système pour une meilleure lisibilité */
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  line-height: 1.6; /* améliore la lisibilité du texte */
+}
+
+/* ============================= */
+/* IMAGES */
+/* ============================= */
+/*
+  Ces règles rendent les images responsives.
+  Elles s’adaptent à la taille de leur conteneur.
+*/
+img {
+  max-width: 100%; /* empêche l’image de dépasser son conteneur */
+  height: auto; /* conserve les proportions */
+  display: block; /* évite les espaces indésirables */
+}
+
+/* ============================= */
+/* STRUCTURE GÉNÉRALE */
+/* ============================= */
+/*
+  Padding commun aux grandes zones de la page
+  (header, main, footer) pour une mise en page cohérente.
+*/
+header,
+main,
+footer {
+  padding: 16px;
+}
+
+/*
+  Le main contient le contenu principal.
+  Il est centré et limité en largeur pour améliorer la lecture.
+*/
+main {
+  max-width: 1100px; /* largeur maximale du contenu */
+  margin: 0 auto; /* centrage horizontal */
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+/*
+  Le header contient la navigation et les éléments secondaires.
+  Flexbox permet d’aligner les éléments horizontalement.
+*/
+header {
+  position: relative;
+  display: flex;
+  align-items: center; /* alignement vertical */
+  padding: 16px; /* espacement entre les éléments */
+  border-bottom: 1px solid #ddd; /* séparation visuelle */
+}
+
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+/*
+  Suppression du style par défaut des listes
+  et affichage horizontal du menu de navigation.
+*/
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* adaptation aux petits écrans */
+}
+
+/*
+  Style des liens de navigation.
+*/
+nav a {
+  text-decoration: none; /* suppression du soulignement */
+  color: #1f1f1f; /* hérite de la couleur du texte */
+  background-color: #ecd4ca;
+  padding: 8px 14px; /* zone cliquable */
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  color: #532b1b;
+}
+
+/*
+  Effet visuel au survol des liens.
+*/
+nav a:hover {
+  background: #b89587;
+}
+
+/* ============================= */
+/* LANGUES */
+/* ============================= */
+/*
+  Bloc contenant le sélecteur de langue.
+*/
+header > div {
+  margin-left: auto; /*Garder les langues à droite */
+}
+
+/* ============================= */
+/* SECTIONS DU CONTENU */
+/* ============================= */
+/*
+  Espacement vertical entre les sections du contenu.
+*/
+main {
+  text-align: center;
+}
+main section:first-of-type img {
+  margin: 0 auto;
+}
+
+/*
+  Titre principal de la page.
+*/
+main h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #532b1b;
+}
+
+/*
+  Titres secondaires.
+*/
+main h2 {
+  margin: 20px 0 10px;
+  font-size: 1.25rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #532b1b;
+}
+main h3 {
+  margin: 20px 0 10px;
+  font-size: 1rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #532b1b;
+}
+main ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 8px 0;
+}
+/* ============================= */
+/* VISUELS */
+/* ============================= */
+/*
+  Mise en page des images dans la dernière section.
+*/
+main section:last-of-type {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+textarea {
+  min-height: 180px;
+  width: 50%;
+  margin: 0 auto;
+}
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+/*
+  Le footer contient les informations légales.
+  Il est structuré avec Flexbox.
+*/
+footer {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+/*
+  Liens du footer.
+*/
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+  Effet au survol des liens du footer.
+*/
+footer a:hover {
+  text-decoration: underline;
+}
+/* styles généraux (desktop par défaut) */
+
+/* ... tout ton CSS actuel ... */
+
+/* ============================= */
+/* RESPONSIVE – MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
